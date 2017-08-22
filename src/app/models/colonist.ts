@@ -6,3 +6,10 @@ export interface Colonist {
   id: number;
   age: number;
 }
+
+export interface NewColonist {
+  name: string;
+  job_id: string;
+  age: string;
+}
+
