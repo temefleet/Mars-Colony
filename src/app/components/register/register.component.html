@@ -1,3 +1,17 @@
-<p>
-  register works!
-</p>
+<div class="page">
+  <div class="register">
+    <h1>Register</h1>
+    <fieldset>
+      <input type="text" placeholder="Name" ng-model="colonist.name" required="" minlength="3" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-touched" style=""> 
+      <input type="number" placeholder="Age" ng-model="colonist.age" required="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" style="">
+      <select required="" name="occupation" ng-model="colonist.job_id" ng-class="{ placeholder: !colonist.job_id }" class="ng-pristine ng-empty ng-invalid ng-invalid-required placeholder ng-touched" style="">
+        <option value="" class="placeholder" disabled>Select occupation</option>
+        <option value="1">Alien Hunter</option>
+        <option value="2">Yoga Teacher</option>
+        <option value="3">Dust Farmer</option>
+        <option value="4">Front-End Developer</option>
+      </select>
+      <button>Check in</button>
+    </fieldset>
+  </div>
+</div>
