@@ -1,7 +1,7 @@
 <div class="page">
   <div class="register">
     <h1>Register</h1>
-    <fieldset>
+    <!-- <fieldset>
       <input type="text" placeholder="Name" ng-model="colonist.name" required="" minlength="3" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-touched" style=""> 
       <input type="number" placeholder="Age" ng-model="colonist.age" required="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" style="">
       <select required="" name="occupation" ng-model="colonist.job_id" ng-class="{ placeholder: !colonist.job_id }" class="ng-pristine ng-empty ng-invalid ng-invalid-required placeholder ng-touched" style="">
@@ -12,6 +12,9 @@
         <option value="4">Front-End Developer</option>
       </select>
       <button>Check in</button>
-    </fieldset>
+    </fieldset> -->
+    <label class="center-block">Name:
+        <input class="form-control" [formControl]="name">
+      </label>
   </div>
 </div>
