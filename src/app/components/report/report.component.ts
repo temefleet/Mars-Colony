@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AlienService } from '../../services/alien';
 import { ReportService } from '../../services/report';
+import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
+
+import { NewReport } from '../../models/report';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styles: [],
+  styles: ['./report.component.scss'],
   providers: [
     AlienService,
     ReportService
@@ -13,14 +16,15 @@ import { ReportService } from '../../services/report';
 })
 export class ReportComponent implements OnInit {
 
-  constructor(private alienService: AlienService,
-              private reportService: ReportService) { }
+  constructor(
+    private alienService: AlienService,
+    private reportService: ReportService
+  ) { }
 
-  // ngOnInit() {
-  //   this.alienService.getAliens().then((response) => {
-  //     console.log(response);
-  //   });
-  // }
+  encounterForm = new FormGroup({
+    alienType: new FormControl('', [Validators.required]),
+    actionTaken: new FormControl('', [Validators.required])
+  })
 
   async ngOnInit() {
     const testReport = {

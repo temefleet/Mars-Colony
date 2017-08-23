@@ -1,20 +1,16 @@
 <div class="page">
   <div class="register">
     <h1>Register</h1>
-    <!-- <fieldset>
-      <input type="text" placeholder="Name" ng-model="colonist.name" required="" minlength="3" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-touched" style=""> 
-      <input type="number" placeholder="Age" ng-model="colonist.age" required="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" style="">
-      <select required="" name="occupation" ng-model="colonist.job_id" ng-class="{ placeholder: !colonist.job_id }" class="ng-pristine ng-empty ng-invalid ng-invalid-required placeholder ng-touched" style="">
-        <option value="" class="placeholder" disabled>Select occupation</option>
-        <option value="1">Alien Hunter</option>
-        <option value="2">Yoga Teacher</option>
-        <option value="3">Dust Farmer</option>
-        <option value="4">Front-End Developer</option>
+    <form [formGroup]="registerForm" novalidate (ngSubmit)="registerColonist()">
+      <input type="text" placeholder="Name" formControlName="name">
+      <input type="number" placeholder="Age" formControlName="age">
+      <select formControlName="job_id">
+        <option value="">Select an Occupation</option>
+        <option *ngFor="let job of jobs" value="{{ job.id }}">{{ job.name }}</option>
       </select>
-      <button>Check in</button>
-    </fieldset> -->
-    <label class="center-block">Name:
-        <input class="form-control" [formControl]="name">
-      </label>
+      <button [disabled]="registerForm.status === 'INVALID'" type="submit">Register</button>
+    </form>
+    {{ registerForm.value | json }}
+    {{ registerForm.status | json }}
   </div>
 </div>

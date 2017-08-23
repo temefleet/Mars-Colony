@@ -1,3 +1,8 @@
-<p>
-  report works!
-</p>
+<h1>Report Encounter</h1>
+<form [formGroup]="encounterForm" novalidate (submit)="submitReport()">
+  <select required="" name="alienType">
+    <option value="" class="placeholder" formControlName="alienType">Select alien type</option>
+  </select>
+  <textarea formControlName="actionTaken"></textarea>
+  <button class="submit">Submit Report</button>
+</form>

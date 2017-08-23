@@ -27,6 +27,7 @@ import { appRoutes } from './app.routes';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    // NgModule,
     HttpModule
   ],
   providers: [],

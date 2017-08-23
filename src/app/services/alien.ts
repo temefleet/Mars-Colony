@@ -12,7 +12,7 @@ export class AlienService {
   getAliens(): Promise<Alien[]> {
     return this.http.get(this.aliensUrl)
                     .toPromise()
-                    .then((response) => response.json().aliens())
+                    .then((response) => response.json().aliens)
                     .catch(this.handleError);
   }
   private handleError(error: any): Promise<string> {

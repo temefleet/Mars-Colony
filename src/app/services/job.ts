@@ -12,7 +12,7 @@ export class JobService {
   getJobs(): Promise<Job[]> {
     return this.http.get(this.jobsUrl)
                     .toPromise()
-                    .then((response) => response.json().jobs())
+                    .then((response) => response.json().jobs)
                     .catch(this.handleError);
   }
   private handleError(error: any): Promise<string> {
