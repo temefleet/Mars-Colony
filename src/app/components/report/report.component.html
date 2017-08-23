@@ -1,8 +1,13 @@
-<h1>Report Encounter</h1>
-<form [formGroup]="encounterForm" novalidate (submit)="submitReport()">
-  <select required="" name="alienType">
-    <option value="" class="placeholder" formControlName="alienType">Select alien type</option>
-  </select>
-  <textarea formControlName="actionTaken"></textarea>
-  <button class="submit">Submit Report</button>
-</form>
+<div class="page">
+  <div class="report">
+    <h1>Report Encounter</h1>
+    <p>Safety on Mars is your responsibility</p>
+    <form [formGroup]="encounterForm" novalidate (submit)="submitReport()">
+      <select formControlName="atype">
+        <option *ngFor="let alien of aliens" value="{{ alien.id }}">{{ alien.type }}</option>
+      </select>
+      <textarea formControlName="action"></textarea>
+      <button type="submit" [disabled]="encounterForm.status === 'INVALID'">Submit Report</button>
+    </form>
+  </div>
+</div>

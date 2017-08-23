@@ -1,0 +1,27 @@
+div.report {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: skyblue;
+  padding: 5%;
+  form {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: 2rem;
+    width: 400px;
+    text-align: center;
+    padding: 2rem;
+    height: 50%;
+    select {
+      padding: 0.2rem;
+      width: 50%;
+      margin: 0 auto;
+    }
+    button {
+      width: 150px;
+      margin: 0 auto;
+    }
+  }
+}

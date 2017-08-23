@@ -4,11 +4,12 @@ import { ReportService } from '../../services/report';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 
 import { NewReport } from '../../models/report';
+import { Alien } from '../../models/alien';
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styles: ['./report.component.scss'],
+  styleUrls: ['./report.component.scss'],
   providers: [
     AlienService,
     ReportService
@@ -16,29 +17,36 @@ import { NewReport } from '../../models/report';
 })
 export class ReportComponent implements OnInit {
 
+  aliens: Alien[];
+
+  encounterForm = new FormGroup({
+    atype: new FormControl('', [Validators.required]),
+    action: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(500),
+      Validators.minLength(5)
+    ])
+  });
+  
   constructor(
     private alienService: AlienService,
     private reportService: ReportService
   ) { }
 
-  encounterForm = new FormGroup({
-    alienType: new FormControl('', [Validators.required]),
-    actionTaken: new FormControl('', [Validators.required])
-  })
-
   async ngOnInit() {
-    const testReport = {
-      id: 2,
-      date: '07/04/2018',
-      colonist_id: 3,
-      atype: 'Yoda',
-      action: 'gave him a banana'
-    }
-    const newReport = await this.reportService.registerReport(testReport);
-    console.log(newReport);
+    this.aliens = await this.alienService.getAliens();
+  }
 
-    const aliens = await this.alienService.getAliens();
-    console.log(aliens);
+  async submitReport() {
+    const newReport: NewReport = {
+      atype: this.encounterForm.get('atype').value,
+      date: Date.now().toString(),
+      id: 0,
+      action: this.encounterForm.get('action').value,
+      colonist_id: 4
+    };
+    const report = await this.reportService.registerReport(newReport);
+    console.log('report was saved!', report);
   }
 
 }
