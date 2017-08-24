@@ -19,5 +19,4 @@ export class EncountersComponent implements OnInit {
   async ngOnInit() {
     this.reports = await this.reportService.getReport();
   }
-
 }

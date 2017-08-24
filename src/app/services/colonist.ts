@@ -18,6 +18,7 @@ export class ColonistService {
       .toPromise()
       .then(response => {
         this.storedColonist = response.json().colonist;
+        console.log('this is the stored', this.storedColonist);
         return response.json().colonist
       })
       .catch(this.handleError);

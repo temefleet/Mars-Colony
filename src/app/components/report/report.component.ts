@@ -3,10 +3,10 @@ import { AlienService } from '../../services/alien';
 import { ReportService } from '../../services/report';
 import { ColonistService } from '../../services/colonist';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { NewReport } from '../../models/report';
 import { Alien } from '../../models/alien';
-import { Colonist } from '../../models/colonist';
 
 @Component({
   selector: 'app-report',
@@ -31,6 +31,7 @@ export class ReportComponent implements OnInit {
   });
   
   constructor(
+    private router: Router,
     private alienService: AlienService,
     private reportService: ReportService,
     private colonistService: ColonistService
@@ -41,17 +42,17 @@ export class ReportComponent implements OnInit {
   }
 
   async submitReport() {
-    const colonistId = this.colonistService.getStoredColonist().id;
+    const colonistId = this.colonistService.getStoredColonist().id.toString();
+    let dateToday = new Date().toISOString().slice(0,10); 
 
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,
-      date: Date.now().toString(),
+      date: dateToday,
       action: this.encounterForm.get('action').value,
       colonist_id: colonistId
     };
-    console.log('this is the one ', colonistId);
-    const report = await this.reportService.registerReport(newReport);
-    console.log('report was saved!', report);
+    // console.log('this is the one ', colonistId);
+    await this.reportService.registerReport(newReport);
+    this.router.navigate(['encounters']);
   }
-
 }

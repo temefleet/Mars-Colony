@@ -30,7 +30,6 @@ import { ColonistService } from './services/colonist';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    // NgModule,
     HttpModule,
     BrowserAnimationsModule
   ],

@@ -4,11 +4,12 @@
     <p>Safety on Mars is your responsibility</p>
     <form [formGroup]="encounterForm" novalidate (submit)="submitReport()">
       <select formControlName="atype">
-        <option *ngFor="let alien of aliens" value="{{ alien.id }}">{{ alien.type }}</option>
+        <option *ngFor="let alien of aliens" value="{{ alien.type }}">{{ alien.type }}</option>
       </select>
       <textarea formControlName="action"></textarea>
-      <button type="submit" [disabled]="encounterForm.status === 'INVALID'" routerLink="/encounters">Submit Report</button>
+      <button type="submit" [disabled]="encounterForm.status === 'INVALID'">Submit Report</button>
     </form>
+    {{ encounterForm.value | json }}
   </div>
 </div>
-<router-outlet></router-outlet>
+
