@@ -7,7 +7,8 @@
         <option *ngFor="let alien of aliens" value="{{ alien.id }}">{{ alien.type }}</option>
       </select>
       <textarea formControlName="action"></textarea>
-      <button type="submit" [disabled]="encounterForm.status === 'INVALID'">Submit Report</button>
+      <button type="submit" [disabled]="encounterForm.status === 'INVALID'" routerLink="/encounters">Submit Report</button>
     </form>
   </div>
 </div>
+<router-outlet></router-outlet>

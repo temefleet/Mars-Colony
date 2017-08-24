@@ -1,0 +1,36 @@
+.encounters {
+  display: grid;
+  grid-template-rows: 100px auto 100px;
+  height: 100vh;
+
+  header {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid lightgrey;
+    h1 {
+      padding-bottom: 0.3rem;
+    }
+  }
+  ul {
+    overflow-y: scroll;
+    padding: 2rem;
+    li {
+      padding-top: 0.5rem;
+    }
+  }
+  footer {
+    background: black;
+    width: 100%;
+    button {
+      color: white;
+      background: black;
+      border: none;
+      height: 100%;
+      width: 100%;
+      font-size: 2.2rem;
+      font-family: "Roboto", sans-serif;
+      font-weight: 100;
+      cursor: pointer;
+    }
+  }
+}

@@ -12,7 +12,7 @@ export class ReportService {
   getReport(): Promise<Report[]> {
     return this.http.get(this.reportUrl)
                     .toPromise()
-                    .then((response) => response.json().reports())
+                    .then((response) => response.json().encounters)
                     .catch(this.handleError);
   }
 
@@ -22,7 +22,7 @@ export class ReportService {
     return this.http
               .post(this.reportUrl, body, { headers: headers })
               .toPromise()
-              .then(response => response.json().encounter)
+              .then(response => response.json().encounters)
               .catch(this.handleError);
   }
 

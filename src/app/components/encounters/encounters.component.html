@@ -1,3 +1,26 @@
-<p>
-  encounters works!
-</p>
+<div class="page">
+  <div class="encounters">
+    <header>
+      <h1>Past Encounters</h1>
+      <p>See an Alien? Report it! 1-800-SlimeStoppers.
+    </header>
+    <ul>
+      <li *ngFor="let report of reports">
+        <p>
+          <span>{{ report.date }} - </span>
+          {{ report.atype }}
+        </p>
+        <p>
+          {{ report.action }}
+        </p>
+      </li>
+    </ul>
+    <footer>
+      <button routerLink="/report">Report Encounter</button>
+    </footer>
+  </div>
+</div>
+
+<div [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</div>

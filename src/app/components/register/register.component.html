@@ -8,9 +8,10 @@
         <option value="">Select an Occupation</option>
         <option *ngFor="let job of jobs" value="{{ job.id }}">{{ job.name }}</option>
       </select>
-      <button [disabled]="registerForm.status === 'INVALID'" type="submit">Register</button>
+      <button [disabled]="registerForm.status === 'INVALID'" type="submit" routerLink="/encounters">Register</button>
     </form>
     {{ registerForm.value | json }}
     {{ registerForm.control | json }}
   </div>
 </div>
+<router-outlet></router-outlet>

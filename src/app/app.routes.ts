@@ -6,9 +6,9 @@ import { EncountersComponent } from './components/encounters/encounters.componen
 import { NotFoundComponent } from './components/notfound/notfound.component';
 
 export const appRoutes: Routes = [
-  { path: '', component: WelcomeComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'encounters', component: EncountersComponent },
-  { path: 'report', component: ReportComponent },
-  { path: '**', component: NotFoundComponent }
-]
+  { path: '', component: WelcomeComponent, data: { state: 'welcome' } },
+  { path: 'register', component: RegisterComponent, data: { state: 'register' } },
+  { path: 'encounters', component: EncountersComponent, data: { state: 'encounters' } },
+  { path: 'report', component: ReportComponent, data: { state: 'report' } },
+  { path: '**', component: NotFoundComponent, data: { state: 'notfound' } }
+];

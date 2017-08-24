@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AlienService } from '../../services/alien';
 import { ReportService } from '../../services/report';
+import { ColonistService } from '../../services/colonist';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 
 import { NewReport } from '../../models/report';
 import { Alien } from '../../models/alien';
+import { Colonist } from '../../models/colonist';
 
 @Component({
   selector: 'app-report',
@@ -30,7 +32,8 @@ export class ReportComponent implements OnInit {
   
   constructor(
     private alienService: AlienService,
-    private reportService: ReportService
+    private reportService: ReportService,
+    private colonistService: ColonistService
   ) { }
 
   async ngOnInit() {
@@ -38,12 +41,15 @@ export class ReportComponent implements OnInit {
   }
 
   async submitReport() {
+    const colonistId = this.colonistService.getStoredColonist().id;
+
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,
       date: Date.now().toString(),
       action: this.encounterForm.get('action').value,
-      colonist_id: 4
+      colonist_id: colonistId
     };
+    console.log('this is the one ', colonistId);
     const report = await this.reportService.registerReport(newReport);
     console.log('report was saved!', report);
   }

@@ -12,7 +12,6 @@ import { NewColonist } from '../../models/colonist';
   styleUrls: ['./register.component.scss'],
   providers: [
     JobService,
-    ColonistService
   ]
 })
 export class RegisterComponent implements OnInit {
