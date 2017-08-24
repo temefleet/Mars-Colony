@@ -11,6 +11,6 @@
       <button [disabled]="registerForm.status === 'INVALID'" type="submit">Register</button>
     </form>
     {{ registerForm.value | json }}
-    {{ registerForm.controls | json }}
+    {{ registerForm.control | json }}
   </div>
 </div>

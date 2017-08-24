@@ -41,7 +41,6 @@ export class ReportComponent implements OnInit {
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,
       date: Date.now().toString(),
-      id: 0,
       action: this.encounterForm.get('action').value,
       colonist_id: 4
     };
