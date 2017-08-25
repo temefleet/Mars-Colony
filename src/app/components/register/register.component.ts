@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
-import { JobService } from '../../services/job';
-import { ColonistService } from '../../services/colonist';
+import { JobService } from '../../_services/job';
+import { ColonistService } from '../../_services/colonist';
 import { Router } from '@angular/router';
 
-import { Job } from '../../models/job';
-import { NewColonist } from '../../models/colonist';
+import { Job } from '../../_models/job';
+import { NewColonist } from '../../_models/colonist';
 
 @Component({
   selector: 'app-register',
@@ -31,7 +31,8 @@ export class RegisterComponent implements OnInit {
       Validators.max(50),
       Validators.min(0)
     ]),
-    job_id: new FormControl('', [Validators.required])
+    job_id: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
   });
 
   constructor(
@@ -50,6 +51,9 @@ export class RegisterComponent implements OnInit {
       age: this.registerForm.get('age').value,
       job_id: this.registerForm.get('job_id').value      
     };
+
+    localStorage.setItem('userName', this.registerForm.get('name').value);
+    localStorage.setItem('password', this.registerForm.get('password').value);
 
     await this.colonistService.registerColonist(newColonist);
     this.router.navigate(['encounters']);

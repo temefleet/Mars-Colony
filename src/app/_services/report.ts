@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Report, NewReport } from '../models/report';
+import { Report, NewReport } from '../_models/report';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 

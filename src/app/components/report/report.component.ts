@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AlienService } from '../../services/alien';
-import { ReportService } from '../../services/report';
-import { ColonistService } from '../../services/colonist';
+import { AlienService } from '../../_services/alien';
+import { ReportService } from '../../_services/report';
+import { ColonistService } from '../../_services/colonist';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { NewReport } from '../../models/report';
-import { Alien } from '../../models/alien';
+import { NewReport } from '../../_models/report';
+import { Alien } from '../../_models/alien';
 
 @Component({
   selector: 'app-report',
@@ -42,8 +42,9 @@ export class ReportComponent implements OnInit {
   }
 
   async submitReport() {
-    const colonistId = this.colonistService.getStoredColonist().id.toString();
-    let dateToday = new Date().toISOString().slice(0,10); 
+    // const colonistId = this.colonistService.getStoredColonist().id.toString();
+    const dateToday = new Date().toISOString().slice(0,10); 
+    const colonistId = localStorage.getItem('colonistId');
 
     const newReport: NewReport = {
       atype: this.encounterForm.get('atype').value,

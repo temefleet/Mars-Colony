@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Job } from '../models/job';
+import { Job } from '../_models/job';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 

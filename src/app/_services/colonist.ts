@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Colonist, NewColonist } from '../models/colonist';
+import { Colonist, NewColonist } from '../_models/colonist';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -17,8 +17,8 @@ export class ColonistService {
       .post(this.colonistsUrl, body, { headers: headers })
       .toPromise()
       .then(response => {
-        this.storedColonist = response.json().colonist;
-        console.log('this is the stored', this.storedColonist);
+        localStorage.setItem('colonistId', response.json().colonist.id);
+        // this.storedColonist = response.json().colonist;
         return response.json().colonist
       })
       .catch(this.handleError);
