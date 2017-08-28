@@ -1,0 +1,33 @@
+@import 'src/assets/scss/variables';
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.blog {
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  padding: 3%;
+  height: 100vh;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+  .post {
+    padding: 1rem 0;
+    h2 {
+      padding-bottom: 0.5rem;
+    }
+    div {
+      padding-bottom: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      padding: 0.2rem 0.4rem;
+      background: $color__accent;
+      color: $color__main;
+    }
+  }
+}

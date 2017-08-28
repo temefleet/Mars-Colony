@@ -16,6 +16,7 @@ import { NotFoundComponent } from './components/notfound/notfound.component';
 import { appRoutes } from './app.routes';
 
 import { ColonistService } from './_services/colonist';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ColonistService } from './_services/colonist';
     EncountersComponent,
     ReportComponent,
     NotFoundComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
+@import 'src/assets/scss/variables';
+
 .encounters {
   display: grid;
-  grid-template-rows: 100px auto 100px;
+  grid-template-rows: 100px auto 50px 100px;
   height: 100vh;
 
   header {
@@ -18,12 +20,17 @@
       padding-top: 0.5rem;
     }
   }
+  button {
+    width: 100%;
+    background: lightgray;
+    color: black;
+  }
   footer {
-    background: black;
+    background: $color__accent;
     width: 100%;
     button {
-      color: white;
-      background: black;
+      color: $color__main;
+      background: $color__accent;
       border: none;
       height: 100%;
       width: 100%;

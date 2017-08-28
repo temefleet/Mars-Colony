@@ -8,9 +8,7 @@
         <option value="">Select an Occupation</option>
         <option *ngFor="let job of jobs" value="{{ job.id }}">{{ job.name }}</option>
       </select>
-      <input type="text" placeholder="Password" formControlName="password">
       <button [disabled]="registerForm.status === 'INVALID'" type="submit">Register</button>
     </form>
-    {{ registerForm.value | json }}
   </div>
 </div>

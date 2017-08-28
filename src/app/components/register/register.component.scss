@@ -1,3 +1,5 @@
+@import 'src/assets/scss/variables';
+
 div.register {
   height: 100vh;
   width: 100%;
@@ -5,7 +7,7 @@ div.register {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: skyblue;
+  background: $color__background;
   form {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
@@ -23,7 +25,7 @@ div.register {
 }
 
 .register h1 {
-  color: white;
+  color: $color__main;
   padding-top: 1rem;
 }
 

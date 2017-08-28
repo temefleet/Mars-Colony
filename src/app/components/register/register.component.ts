@@ -31,8 +31,7 @@ export class RegisterComponent implements OnInit {
       Validators.max(50),
       Validators.min(0)
     ]),
-    job_id: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    job_id: new FormControl('', [Validators.required])
   });
 
   constructor(

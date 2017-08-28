@@ -1,10 +1,12 @@
+@import 'src/assets/scss/variables';
+
 div.report {
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: skyblue;
+  background: $color__background;
   padding: 5%;
   form {
     display: grid;

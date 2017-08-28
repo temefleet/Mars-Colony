@@ -1,0 +1,20 @@
+@import 'src/assets/scss/variables';
+
+.notfound {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    padding: 2rem;
+  }
+  a {
+    padding: 0.2rem 0.4rem;
+    border: 1px solid $color__main;
+    color: $color__main;
+    text-decoration: none;
+  }
+}
