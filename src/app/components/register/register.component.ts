@@ -52,7 +52,6 @@ export class RegisterComponent implements OnInit {
     };
 
     localStorage.setItem('userName', this.registerForm.get('name').value);
-    localStorage.setItem('password', this.registerForm.get('password').value);
 
     await this.colonistService.registerColonist(newColonist);
     this.router.navigate(['encounters']);
