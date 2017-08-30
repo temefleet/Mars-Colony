@@ -1,25 +1,32 @@
 @import 'src/assets/scss/variables';
 
-div.report {
-  height: 100vh;
-  width: 100%;
+.report-box {
+  width: 75%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: $color__background;
   padding: 5%;
+  background-color: $color__main;
+  color: $color__accent;
+  border-radius: 25px;
   form {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-row-gap: 2rem;
-    width: 400px;
     text-align: center;
     padding: 2rem;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     select {
       padding: 0.2rem;
       width: 50%;
       margin: 0 auto;
+    }
+    textarea {
+      border-radius: 25px;
+      padding: 1rem;
+      resize: none;
     }
     button {
       width: 150px;

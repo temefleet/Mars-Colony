@@ -1,14 +1,18 @@
 @import 'src/assets/scss/variables';
 
-.encounters {
+.encounters-box {
   display: grid;
   grid-template-rows: 100px auto 50px 100px;
-  height: 100vh;
+  height: 90vh;
+  width: 90%;
 
   header {
   text-align: center;
   padding: 1rem;
-  border-bottom: 1px solid lightgrey;
+  border: 1px solid lightgrey;
+  background-color: $color__accent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
     h1 {
       padding-bottom: 0.3rem;
     }
@@ -16,6 +20,7 @@
   ul {
     overflow-y: scroll;
     padding: 2rem;
+    background-color: $color__accent;
     li {
       padding-top: 0.5rem;
     }
@@ -26,9 +31,10 @@
     color: black;
   }
   footer {
-    background: $color__accent;
     width: 100%;
     button {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
       color: $color__accent;
       background: $color__main;
       border: none;

@@ -5,11 +5,17 @@
 }
 
 .blog {
-  max-width: 800px;
   font-family: "Roboto", sans-serif;
-  padding: 3%;
   height: 100vh;
-  margin: 0 auto;
+  padding: 3rem;
+}
+
+.blog-box {
+  max-width: 800px;
+  background: $color__accent;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 25px;
   h1 {
     text-align: center;
   }
