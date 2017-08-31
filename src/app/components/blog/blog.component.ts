@@ -11,12 +11,14 @@ import { BlogService } from '../../_services/blog';
 })
 export class BlogComponent implements OnInit {
 
-  posts = {};
+  posts: {};
+  loader = true;
 
   constructor(private blogService: BlogService) { }
 
   async ngOnInit() {
     this.posts = await this.blogService.getPosts();
+    this.loader = false;
   }
 }
 
