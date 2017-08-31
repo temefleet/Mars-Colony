@@ -27,6 +27,9 @@
     li {
       padding-top: 0.5rem;
     }
+    li:last-child {
+      padding-bottom: 1rem;
+    }
   }
   button {
     width: 100%;
